@@ -34,6 +34,8 @@ class App extends Component {
     let debits = await (await axios.get("https://moj-api.herokuapp.com/debits")).data;
     let credits = await (await axios.get("https://moj-api.herokuapp.com/credits")).data;
    
+    // console.log(debits);
+    // console.log(credits);
 
     let debit_total = 0;
     let credit_total = 0;
