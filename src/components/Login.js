@@ -3,6 +3,46 @@
 
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import styled from "styled-components";
+
+const Division = styled.div`
+  background: linear-gradient(lightGreen, white);
+`
+
+const Labels = styled.div`
+  font-size: 18px;
+`
+
+const Header = styled.h1`
+  padding: 5px;
+  text-align: center;
+  color: black;
+  font-size: 30px;
+`
+
+const Inputs = styled.input`
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+`
+
+const Button = styled.a`
+  font-family: monospace;
+  font-size: 15px;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 6rem;
+  background: transparent;
+  color: black;
+  border: 2px solid black;
+  letter-spacing: 0.1px;
+`
 
 class LogIn extends Component {
   constructor () {  // Create and initialize state
@@ -32,6 +72,7 @@ class LogIn extends Component {
     this.props.mockLogIn(this.state.user)
     this.setState({redirect: true})
   }
+
   
   render () {
     if (this.state.redirect) {  // Redirect to "User Profile" page when "Log In" button is clicked
@@ -39,21 +80,21 @@ class LogIn extends Component {
     }
     // Render the login form
     return (
-      <div>
-        <h1>Login</h1>
+      <Division>
+        <Header>Login</Header>
 
         <form onSubmit={this.handleSubmit}>
           <div>
-            <label htmlFor="userName">User Name</label>
-            <input type="text" name="userName" onChange={this.handleChange} value={this.state.user.userName} />
+            <Labels htmlFor="userName">User Name</Labels>
+            <Inputs type="text" name="userName" onChange={this.handleChange} value={this.state.user.userName} />
           </div>
           <div>
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" />
+            <Labels htmlFor="password">Password</Labels>
+            <Inputs type="password" name="password" />
           </div>
-          <button>Log In</button>
+          <Button>Log In</Button>
         </form>                  
-      </div>
+      </Division>
     )
   }
 }
