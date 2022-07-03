@@ -58,6 +58,14 @@ class App extends Component {
 
       const creditsTotal = credits.reduce((a, b) => a + b.amount, 0);
       const debitsTotal = debits.reduce((a, b) => a + b.amount, 0);
+	  
+	  console.log(parseFloat(creditsTotal.toFixed(2)) - parseFloat(debitsTotal.toFixed(2)));
+	  
+	
+	  if(parseFloat(creditsTotal.toFixed(2)) - parseFloat(debitsTotal.toFixed(2)) === 0) {
+		  return {accountBalance: ((creditsTotal - debitsTotal).toFixed(2)).substring(1)};
+	  } 
+		
       return {accountBalance: (creditsTotal - debitsTotal).toFixed(2)};
     })
   }         
