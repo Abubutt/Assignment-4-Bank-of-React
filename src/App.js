@@ -125,7 +125,7 @@ class App extends Component {
 
     return (
         <div>
-          <Router>
+          <Router basename="/Assignment-4-Bank-of-React">
               <Route exact path="/" render={HomeComponent}/>
               <Route exact path="/userProfile" render={UserProfileComponent}/>
               <Route exact path="/login" render={LogInComponent}/>   
