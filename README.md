@@ -1,5 +1,10 @@
 # Assignment-4-Bank-of-React
+Group Members:
 
-# run:
+ Abu Butt - Abubutt
 
-npm i react-router-dom@5.3.0 react-router@5.2.1 && npm start
+ Anas Idrissou - codeavecanas
+
+ Sky Brooks - asteroidfive
+
+ Joseph Planer - jplaner
