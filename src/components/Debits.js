@@ -1,6 +1,8 @@
 // src/components/Debits.js
 import React from 'react'
 import { Link } from 'react-router-dom';
+import '../Credits_Debits.css';
+
 const Debits = ({
   addDebit,
   balance, 
@@ -10,9 +12,9 @@ const Debits = ({
     return debits?.map((debit, index) => {
       let date = debit.date.slice(0, 10);
       return (
-      <li key={index}>
-          {debit.amount} 
-          {debit.description}
+      <li class = "transaction" key={index}>
+          {debit.amount}{' '}|{' '}
+          {debit.description}{' '}|{' '}
           {date}
       </li>
         );
@@ -27,12 +29,12 @@ const Debits = ({
       {debitsView()}
       <form onSubmit={addDebit}>
       <label id="description"> Description: </label>
-        <input type="text" name="description"/>
+        <input type="text" name="description" required/>
         <label id="amount"> Amount: </label>
-        <input type="number" name="amount"  step="0.01"/>
+        <input type="number" name="amount"  step="0.01" required/>
         <button type="submit">Add Debit</button>
       </form>
-      <Link to="/">Home</Link>
+      <div class = "home-button"><Link to="/">Home</Link></div>
     </div>
   )
 }
