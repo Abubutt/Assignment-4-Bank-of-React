@@ -39,13 +39,13 @@ class Home extends Component {
         <img src="https://picsum.photos/200/200" alt="bank"/>
         <Header>Bank of React</Header>
 
-        <Button href="/userProfile">User Profile</Button>
+        <Button href="/Assignment-4-Bank-of-React/userProfile">User Profile</Button>
         <br/>
-        <Button href="/login">Login</Button>
+        <Button href="/Assignment-4-Bank-of-React/login">Login</Button>
         <br/>
-        <Button href="/credits">Credits</Button>
+        <Button href="/Assignment-4-Bank-of-React/credits">Credits</Button>
         <br/>
-        <Button href="/debits">Debits</Button>
+        <Button href="/Assignment-4-Bank-of-React/debits">Debits</Button>
         <br/>
         <AccountBalance accountBalance={this.props.accountBalance}/>
       </Division>
