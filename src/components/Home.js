@@ -4,24 +4,51 @@
 import React, {Component} from 'react';
 import AccountBalance from './AccountBalance';
 import {Link} from 'react-router-dom';
+import styled from "styled-components";
+
+const Division = styled.div`
+  background: linear-gradient(lightGreen, white);
+`
+
+const Header = styled.h1`
+  padding: 10px;
+  text-align: center;
+  color: black;
+  font-size: 50px;
+  letter-spacing: 1px;
+`
+
+const Button = styled.a`
+  font-family: monospace;
+  font-size: 20px;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 12rem;
+  background: transparent;
+  color: black;
+  border: 2px solid black;
+  letter-spacing: 0.1px;
+`
 
 class Home extends Component {
   render() {
     return (
-      <div>
+      <Division>
         <img src="https://picsum.photos/200/200" alt="bank"/>
-        <h1>Bank of React</h1>
+        <Header>Bank of React</Header>
 
-        <Link to="/userProfile">User Profile</Link>
+        <Button href="/userProfile">User Profile</Button>
         <br/>
-        <Link to="/login">Login</Link>
+        <Button href="/login">Login</Button>
         <br/>
-        <Link to="/credits">Credits (to be implemented in the Assignment)</Link>
+        <Button href="/credits">Credits</Button>
         <br/>
-        <Link to="/debits">Debits (to be implemented in the Assignment)</Link>
-        
+        <Button href="/debits">Debits</Button>
+        <br/>
         <AccountBalance accountBalance={this.props.accountBalance}/>
-      </div>
+      </Division>
     );
   }
 }
